@@ -3,3 +3,36 @@
 z-backup/
 .VSCodeCounter/*
 
+# Local .terraform directories (contains provider binaries and modules)
+.terraform/
+**/.terraform/*
+
+# .tfstate files (contains sensitive system data and resource mappings)
+*.tfstate
+*.tfstate.*
+
+# Crash log files
+crash.log
+crash.*.log
+
+# Exclude all .tfvars files (likely to contain sensitive passwords or private keys)
+*.tfvars
+*.tfvars.json
+
+# Ignore override files (used for local adjustments, usually not checked in)
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
+# Ignore transient lock info files created during terraform apply
+.terraform.tfstate.lock.info
+
+# Ignore CLI configuration files
+.terraformrc
+terraform.rc
+
+# Optional: Ignore generated execution plans
+*tfplan*
+
+
