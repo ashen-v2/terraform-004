@@ -35,4 +35,7 @@ terraform.rc
 # Optional: Ignore generated execution plans
 *tfplan*
 
+*.pub
+*.pem
+*key
 
