@@ -1,26 +1,27 @@
 resource "aws_instance" "lab_06" {
   # This is an Ubuntu 24.04 instance. 
-  ami           = "ami-0f5fcdfbd140e4ab7"
+  ami           = "ami-0532913178263be11"
   instance_type = "t2.micro"
   key_name      = "aws_key"
   vpc_security_group_ids = [
     aws_security_group.allow_ssh.id,
     aws_security_group.allow_tls.id,
-        aws_security_group.allow_http.id,
+    aws_security_group.allow_http.id,
     aws_security_group.egress.id,
   ]
 
-  
 
+
+  user_data = file("../scripts/apache-mkdocs.yaml")
 
   tags = {
-    Name                  = "Lab-06-Cloud-Init"    
+    Name = "server-1"
   }
 }
 
 resource "aws_key_pair" "deployer" {
   key_name   = "aws_key"
-  public_key = "ssh-ed25519 AAAA...."
+  public_key = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIOufYZFBbNC7nKGd4FeZqu/HLkAKRYv98Ku+suKxXViL ashen@DESKTOP-OFVCTNO"
 }
 
 # Security Groups
