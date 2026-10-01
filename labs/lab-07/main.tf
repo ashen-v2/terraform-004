@@ -10,13 +10,13 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-2"
+  region = "ap-southeast-1"
 }
 
-resource "aws_instance" "lab_07" {  
-  ami           = "ami-050352a65e954abb1"
+resource "aws_instance" "lab_07" {
+  ami           = "ami-0532913178263be11"
   instance_type = "t2.micro"
   tags = {
-    Name      = "Lab-07-Variables!!!"
+    Name = var.aws_instance
   }
 }
