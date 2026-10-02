@@ -16,7 +16,7 @@ provider "aws" {
 }
 
 module "vpc" {
-  source  = "terraform-aws-modules/vpc/aws"
+  source = "terraform-aws-modules/vpc/aws"
   # To download the latest module, simply omit the version argument. 
   # However, if you wanted a specific module version, you could list it as shown below.
   # This version was released in 2023.
@@ -38,10 +38,10 @@ module "ec2_instances" {
   source  = "terraform-aws-modules/ec2-instance/aws"
   version = "6.1.5"
 
-  name           = "Cluster-A-${count.index}"
+  name  = "Cluster-A-${count.index}"
   count = 3
 
-                            # This is Amazon Linux
+  # This is Amazon Linux
   ami                    = "ami-0e858a9b9fb8b4917"
   instance_type          = "t2.micro"
   vpc_security_group_ids = [module.vpc.default_security_group_id]
