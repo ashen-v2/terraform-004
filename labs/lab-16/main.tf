@@ -1,8 +1,15 @@
 ## PUT TERRAFORM CLOUD BLOCK HERE!  ##
 
 terraform {
-  
-  
+
+   cloud {
+    
+    organization = "my-learning231"
+
+    workspaces {
+      name = "lab-15"
+    }
+  }
   
   required_providers {
     aws = {
